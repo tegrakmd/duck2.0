@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "Copyright Klim Type Foundry";
+  src: url("../font/66610edf51a23deaadf581a6_signifier-web-extralight.woff2")
+    format("woff2");
+}
 body {
   width: 100%;
   height: 100%;
@@ -83,18 +88,22 @@ nav {
   justify-content: center;
 }
 .hero_title {
-  font-family: Inter;
+  font-family: Copyright Klim Type Foundry;
   font-weight: 500;
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 3.5em;
+  letter-spacing: -1px;
   margin: 0 auto;
 }
+
 .hero_title_container {
   text-align: center;
   padding-top: 4.5rem;
 }
 .hero_title em {
   font-family: Signifier, sans-serif;
+  font-family: Copyright Klim Type Foundry;
+  color: #111;
+  text-decoration: none;
 }
 /*  */
 .project_section {
