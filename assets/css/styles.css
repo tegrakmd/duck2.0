@@ -158,7 +158,8 @@ nav {
   .hero_title {
     font-size: 1.5rem;
   }
-  .slog {
+  .slog,
+  .menu {
     font-size: 1.5em;
   }
 }
