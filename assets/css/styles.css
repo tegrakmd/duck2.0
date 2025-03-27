@@ -13,6 +13,7 @@ body {
   height: 100%;
   background-color: white;
   color: #111;
+  min-width: 300px;
 }
 /*  */
 .pParent,
@@ -70,15 +71,50 @@ nav {
   height: 2rem;
 }
 .slog {
-  font-size: 1.8em;
-  font-weight: 500;
+  font-size: 1.9em;
+  font-weight: 600;
   letter-spacing: -2px;
   mix-blend-mode: difference;
   color: #111;
 }
+.menu {
+  font-weight: 600;
+
+  font-size: 1.5em;
+}
+/*  */
+
+.cool-link {
+  display: inline-block;
+  width: max-content;
+  border-bottom: solid 0.063rem #f3f3f3;
+}
+.cool-link:after {
+  display: block;
+  content: "";
+  border-bottom: solid 0.063rem #333;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-out 0s;
+}
+.cool-link:hover:after {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-out 0s;
+}
+.cool-link.from-right:after {
+  transform-origin: left bottom;
+}
+.cool-link.from-right:hover:after {
+  transform-origin: right bottom;
+}
+.cool-link.from-left:after {
+  transform-origin: right bottom;
+}
+.cool-link.from-left:hover:after {
+  transform-origin: left bottom;
+}
 /*  */
 .hauto {
-  height: 40dvh;
+  height: 20dvh;
 }
 .hero_section {
   width: 100%;
@@ -91,7 +127,7 @@ nav {
   font-family: Copyright Klim Type Foundry;
   font-weight: 500;
   font-size: 3.5em;
-  letter-spacing: -1px;
+  letter-spacing: -1.8px;
   margin: 0 auto;
 }
 
@@ -127,6 +163,7 @@ nav {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  cursor: pointer;
 }
 .img_cover {
   position: absolute;
@@ -139,6 +176,63 @@ nav {
   height: 100%;
   max-width: 100%;
   object-position: center center;
+}
+.data_card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 2em 1.5em;
+  transition: 1s ease-in-out;
+  color: #e0e0e0;
+}
+.left_top_data_card {
+  transform: translateY(-100px);
+  transition: 1s ease-in-out;
+}
+.bot_data_card {
+  transform: translateY(100px);
+  transition: 1s ease-in-out;
+}
+.data_card:hover .left_top_data_card {
+  transform: translateY(0px);
+}
+.data_card:hover .bot_data_card {
+  transform: translateY(0px);
+}
+.data_card:hover {
+  background-color: #11111193;
+}
+.left_top_data_card h3 {
+  font-family: Copyright Klim Type Foundry;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.top_data_card,
+.bot_data_card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left_bot_data_card {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn_glow {
+  font-family: Poppins;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background-color: #77757573;
+  border-radius: 10px;
+  padding: 0.5em 1em;
 }
 @media (max-width: 768px) {
   .hero_title_container {
@@ -153,14 +247,24 @@ nav {
     max-width: 100vw;
     padding: 1em;
   }
+  .btn_glow {
+    font-size: 0.7em;
+  }
+  .data_card {
+    padding: 1em 0.5em;
+  }
+  .btn_glow {
+    border-radius: 4px;
+  }
+  .slog {
+    display: none;
+  }
 }
 @media (max-width: 400px) {
   .hero_title {
     font-size: 1.5rem;
   }
-  .slog {
-    display: none;
-  }
+
   .menu {
     font-size: 1.5em;
   }
