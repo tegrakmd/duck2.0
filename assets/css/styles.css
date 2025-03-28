@@ -56,12 +56,6 @@ nav {
 .nav_logo {
   display: flex;
 }
-/* .nav_logo_eye {
-  width: 2rem;
-  height: 2rem;
-  overflow: visible;
-  mix-blend-mode: multiply;
-} */
 .nav_logo_eye,
 .nav_logo_earth {
   opacity: 1;
@@ -126,9 +120,10 @@ nav {
 .hero_title {
   font-family: Copyright Klim Type Foundry;
   font-weight: 500;
-  font-size: 3.5em;
+  /* font-size: 3.5em; */
   letter-spacing: -1.8px;
   margin: 0 auto;
+  font-size: clamp(1.5em, 3.5em, 5vw);
 }
 
 .hero_title_container {
@@ -234,14 +229,37 @@ nav {
   border-radius: 10px;
   padding: 0.5em 1em;
 }
+/*  */
+.wrap {
+  width: 100%;
+  height: 100vh;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.quote {
+  margin-top: 0px;
+  font-size: clamp(2rem, 6rem, 7vw);
+  line-height: 76px;
+  text-align: center;
+  overflow: hidden;
+  color: #111;
+}
+
+.split-line {
+  overflow: hidden;
+}
+/*  */
 @media (max-width: 768px) {
   .hero_title_container {
     max-width: 100%;
     width: 100%;
     padding: 0.3rem;
-  }
-  .hero_title {
-    font-size: 2em;
   }
   .project_items_grid {
     max-width: 100vw;
@@ -261,10 +279,9 @@ nav {
   }
 }
 @media (max-width: 400px) {
-  .hero_title {
-    font-size: 1.5rem;
+  .hauto {
+    height: 30dvh;
   }
-
   .menu {
     font-size: 1.5em;
   }
